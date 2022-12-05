@@ -11,7 +11,7 @@ function App() {
     dispach({type: 'DEC'})
   }
   const addby=()=>{
-    dispach({type: 'ADD'})
+    dispach({type: 'ADD', payload:10})
   }
   return (
     <div>
@@ -19,7 +19,7 @@ function App() {
       <h2>{counter}</h2>
       <button onClick={increament}>+</button>
       <button onClick={decreament}>-</button>
-      <button onClick={addby}>Add</button>
+      <button onClick={addby}>Add 10</button>
     </div>
   );
 }
