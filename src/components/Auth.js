@@ -1,18 +1,18 @@
 import React from "react";
-import { authActions } from "../store/auth-slice";
 import { useDispatch } from "react-redux";
+import { authAction } from "../store/auth-slice";
 
 import "./Auth.css";
 
 const Auth = () => {
-  const dispatch =useDispatch();
-  const handleSubmit=(e)=>{
+  const dispatch = useDispatch();
+  const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(authActions.login())
+    dispatch(authAction.login())
   }
   return (
     <div className="container">
-      <h1>Login</h1>
+      <h1>Login</h1>{" "}
       <form onSubmit={handleSubmit}>
         <label htmlFor="id">Id</label>
         <input type="text" name="id" id="id" />

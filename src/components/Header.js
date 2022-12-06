@@ -1,21 +1,22 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { authActions } from "../store/auth-slice";
+import { useDispatch} from "react-redux";
+import { authAction } from "../store/auth-slice";
 import Cart from "./Cart";
 import "./Header.css";
 const Header = () => {
   const dispatch = useDispatch();
-  const logoutHandler = () => {
-    dispatch(authActions.logout());
+  const logoutHundler = () => {
+    dispatch(authAction.logOut())
   }
-   return (
+  return (
     <header>
       <nav className="header-nav">
         <ul className="header-ul">
           <li>
             <h2
               className="header-h2"
-              style={{ fontFamily: "monospace", fontSize: "30px" }}>
+              style={{ fontFamily: "monospace", fontSize: "30px" }}
+            >
               Redux Shopping App
             </h2>
           </li>
@@ -23,9 +24,9 @@ const Header = () => {
             <Cart />
           </li>
           <li>
-            <button onClick={logoutHandler} className="logout-btn">
-              Logout
-            </button>
+            <button 
+            onClick={logoutHundler}
+            className="logout-btn">LOGOUT</button>
           </li>
         </ul>
       </nav>
