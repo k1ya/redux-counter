@@ -45,7 +45,7 @@ export const sendCartData = (cart) => {
           body: JSON.stringify(cart),
         }
       );
-      const data = await res.json();
+     // const data = await res.json();
       // Send state as Request is successful
       dispatch(
         uiActions.showNotification({
