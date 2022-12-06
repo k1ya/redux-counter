@@ -1,21 +1,14 @@
-import{legacy_createStore as createStore} from 'redux';
+import { configureStore } from "@reduxjs/toolkit";
+import authSlice from "./auth-slice";
+import cartSclice from "./cart-slice";
+import uiSlice from "./ui-slice";
 
-const reducerFn=(state={counter:0},action)=> {
-    
-    if(action.type ==="INC"){
-        return {counter: state.counter+1};
-    }
+const store = configureStore({
+    reducer: {
+        auth: authSlice.reducer,
+        cart: cartSclice.reducer,
+        ui: uiSlice.reducer
+    },
+});
 
-    if(action.type==="DEC"){
-        return{counter: state.counter-1}
-    }
-
-    if(action.type==="ADD"){
-        return{counter: state.counter + action.payload}
-    }
-    
-    return state
-}
-
-const store = createStore(reducerFn)
 export default store;
