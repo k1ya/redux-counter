@@ -36,17 +36,7 @@ export const sendCartData = (cart) => {
       })
     );
     const sendRequest = async () => {
-      // Send state as Sending request
-
-      const res = await fetch(
-        "https://redux-cart-bb198-default-rtdb.firebaseio.com/cartItems.json",
-        {
-          method: "PUT",
-          body: JSON.stringify(cart),
-        }
-      );
-      const data = await res.json();
-      // Send state as Request is successful
+      
       dispatch(
         uiActions.showNotification({
           open: true,
