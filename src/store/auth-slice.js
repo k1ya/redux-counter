@@ -1,18 +1,18 @@
 import {createSlice} from '@reduxjs/toolkit'
 
-const authSlice = createSlice ({
-    name: 'auth',
-    initialState: {isLogedIn: false},
+const authSlice = createSlice({
+    name: "auth",
+    initialState: { isLoggedIn: false },
     reducers: {
-        login(state) {
-            state.isLogedIn = true
-        },
-        logOut(state) {
-            state.isLogedIn = false
-        }
-    }
-})
-
-export const authAction = authSlice.actions;
-
-export default authSlice;
+      login(state) {
+        state.isLoggedIn = true;
+      },
+      logout(state) {
+        state.isLoggedIn = false;
+      },
+    },
+  });
+  
+  export const authActions = authSlice.actions;
+  
+  export default authSlice;

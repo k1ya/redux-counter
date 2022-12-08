@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { authAction } from "../store/auth-slice";
+import { authActions } from "../store/auth-slice";
 
 import "./Auth.css";
 
@@ -8,8 +8,9 @@ const Auth = () => {
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(authAction.login())
-  }
+    // dispatch
+    dispatch(authActions.login());
+  };
   return (
     <div className="container">
       <h1>Login</h1>{" "}
