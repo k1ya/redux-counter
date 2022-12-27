@@ -4,13 +4,17 @@ import Products from "./Products";
 import "./Layout.css";
 import CartItems from "./CartItems";
 import { useSelector } from "react-redux";
+import "./Cart"
+
 const Layout = () => {
   let total = 0;
   const itemsList = useSelector((state) => state.cart.itemsList);
-
-  itemsList.forEach((item) => {
-    total += item.totalPrice;
-  });
+  
+    
+       itemsList?.forEach((item) => {
+      total += item.totalPrice;
+    });
+     
   const showCart = useSelector((state) => state.cart.showCart);
 
   return (
@@ -22,7 +26,7 @@ const Layout = () => {
         <div className="total-price">
           <h3>Total: ${total}</h3>
           <button className="orderBtn">Place Order</button>
-        </div>{" "}
+        </div>
       </div>
     </React.Fragment>
   );
