@@ -5,7 +5,7 @@ export const fetchData = () => {
     return async(dispatch) => {
 
         const fetchHandler = async() => {
-            const res = await fetch("'https://redux-http-fc3f2-default-rtdb.firebaseio.com/cartItems.json")
+            const res = await fetch("https://redux-cart-bb198-default-rtdb.firebaseio.com/cartItems.json")
             const data = await res.json();
             return data
         }
@@ -29,7 +29,7 @@ export const sendCartData = (cart) => {
           }))
           const sendRequest = async () => {
             const res = await fetch(
-              'https://redux-http-fc3f2-default-rtdb.firebaseio.com/cartItems.json' , 
+              'https://redux-cart-bb198-default-rtdb.firebaseio.com/cartItems.json' , 
               {
               method: "PUT",
               body: JSON.stringify(cart)
