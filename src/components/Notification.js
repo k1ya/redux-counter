@@ -1,6 +1,6 @@
 import { Alert } from "@mui/material"
 import { useDispatch, useSelector } from "react-redux"
-import { uiActions } from "../store/ui-slice";
+import { uiActions } from "../store/UiSlice";
 const Notification = ({type,message}) => {
     const dispatch = useDispatch();
     const notification = useSelector(state => state.ui.notification)
